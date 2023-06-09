@@ -6,7 +6,12 @@ const port=process.env.PORT || 80;
 const app = express();
 app.use(cors())
 app.use(bodyParser.json());
-
+app.use((req, res, next) => {
+    if (req.url.endsWith('.js') || req.url.endsWith('.css')) {
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    }
+    next();
+});
 
 function replaceWords(text, replacements) {
     const words = text.split(' ');
