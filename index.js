@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
+const path = require("path");
 const port=process.env.PORT || 80;
 const app = express();
 app.use(cors())
@@ -12,7 +13,7 @@ function replaceWords(text, replacements) {
     const replacedWords = words.map((word) => {
         const normalizedWord = word.replace(/[^\w']/g, '');
         let replacement=replacements[normalizedWord.toLowerCase()] || word;
-        replacement[0]=word[0];
+        replacement=replacement.replace(replacement[0],word[0])
         return replacement;
     });
     return replacedWords.join(' ');
@@ -68,6 +69,13 @@ const replacements = {
     "how's": "how is"
 };
 
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+
+// Route for serving the index.html file
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 
 app.post('/humanize', (req, res) => {

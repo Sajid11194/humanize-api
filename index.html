@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="./css/bootstrap.css" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: rgb(42, 48, 60);
+      color: rgba(166, 173, 187, 0.9);
+      font-family: "ui-sans-serif",sans-serif;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    .home-title{
+      font-weight: bolder;
+      font-size: 3rem;
+      color: rgba(169, 176, 190, 0.9);
+    }
+    .home-subtitle{
+      font-size: 1.5rem;
+    }
+    .button{
+      border-radius: 8px;
+      color:inherit;
+      border: 1px solid;
+      padding: 0.7rem 1rem;
+    }
+    .button-outline{
+      background-color: transparent;
+      transition: all 0.5s;
+    }
+    .button-outline:hover{
+      background-color: rgb(25, 29, 36);
+      border: 1px solid rgb(25, 29, 36);
+    }
+
+    .button-dark{
+     background-color: rgba(25, 29, 36, 0.7);
+      border: none;
+      transition: all 0.5s;
+    }
+    .button-dark:hover{
+      background-color: rgb(25, 29, 36);
+      border: none;
+    }
+
+
+    .textarea{
+      border: 2px dotted #503fad;
+      border-radius: 8px;
+      background-color: transparent;
+      width: 100%;
+      padding: 1rem;
+      color: inherit;
+
+    }
+    .textarea:focus{
+      outline: #5a3fd5;
+      border: 2px dotted #5a3fd5;
+      color:inherit;
+      padding: 1rem;
+    }
+    .nav{
+      padding: 1rem 0;
+    }
+    .nav-item{
+      border-radius: 5px;
+      color:inherit;
+      padding: 0.7rem 1rem;
+      margin:0 0.1rem;
+    }
+    .nav-item:hover{
+      background-color: rgb(25, 29, 36);
+    }
+  </style>
+</head>
+<body>
+<div class="nav">
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <a href="#"  class="nav-item">Home</a>
+    <a href="#"  class="nav-item">Pricing</a>
+    <a href="#" class="nav-item button button-dark">Dashboard</a> </a>
+  </div>
+</div>
+</div>
+<div class="container mt-3 mx-auto">
+<div class="text-center my-5">
+  <h1 class="home-title my-4">Humanize</h1>
+  <p class="home-subtitle">Bypass AI Text Detection</p>
+</div>
+  <div class="mt-5">
+  <p>Bypass AI text detection of any website.</p>
+  <div class="">
+    <button class="button button-outline">GG</button>
+  </div>
+    <textarea class="textarea my-5" rows="10" id="textarea" name="text"  spellcheck=”false”></textarea>
+    <div class="d-flex flex-wrap justify-content-between">
+      <p id="charCount">Character Count : 0/5000</p>
+      <p id="wordCount">Word Count : 0</p>
+    </div>
+    <div class="my-3"><button class="button button-dark float-end px-5" type="submit" id="submitButton">Submit</button></div>
+    <div class="mt-5" id="outputTextarea"></div>
+  </div>
+</div>
+
+<script src="./js/bootstrap.bundle.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
