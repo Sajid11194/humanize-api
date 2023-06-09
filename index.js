@@ -10,8 +10,10 @@ app.use(bodyParser.json());
 function replaceWords(text, replacements) {
     const words = text.split(' ');
     const replacedWords = words.map((word) => {
-        const normalizedWord = word.replace(/[^\w']/g, ''); // Remove non-alphanumeric characters except apostrophe
-        return replacements[normalizedWord.toLowerCase()] || word;
+        const normalizedWord = word.replace(/[^\w']/g, '');
+        let replacement=replacements[normalizedWord.toLowerCase()] || word;
+        replacement[0]=word[0];
+        return replacement;
     });
     return replacedWords.join(' ');
 }
@@ -27,23 +29,23 @@ const replacements = {
     "hadn't": "had not",
     "it's": "it is",
     "let's": "let us",
-    "I'll": "I will",
+    "i'll": "i will",
     "you'll": "you will",
     "he'll": "he will",
     "she'll": "she will",
     "we'll": "we will",
     "they'll": "they will",
-    "I've": "I have",
+    "i've": "i have",
     "you've": "you have",
     "we've": "we have",
     "they've": "they have",
-    "I'd": "I would",
+    "i'd": "i would",
     "you'd": "you would",
     "he'd": "he would",
     "she'd": "she would",
     "we'd": "we would",
     "they'd": "they would",
-    "I'm": "I am",
+    "i'm": "i am",
     "you're": "you are",
     "he's": "he is",
     "she's": "she is",
