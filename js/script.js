@@ -42,7 +42,7 @@ function getResults(){
             const rephrasedText = data.output;
             console.log(rephrasedText);
             inputText.value = rephrasedText;
-            outputText.innerText="Converted in "+(endTime-startTime)/1000+"s";
+            outputText.innerText="Humanized in "+(endTime-startTime)/1000+"s";
         })
         .catch(error => {
             console.error('Error:', error);
