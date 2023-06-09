@@ -1,6 +1,7 @@
 const API_ENDPOINT_URL="https://humanize-api.vercel.app/humanize";
 
 document.getElementById('submitButton').addEventListener('click',getResults);
+document.getElementById('clearText').addEventListener('click',clearText);
 document.getElementById('textarea').addEventListener('input', count);
 
 function count() {
@@ -14,7 +15,12 @@ function count() {
     wordCount.textContent = `Word Count: ${words.length}`;
 
 }
-
+function clearText(){
+    const inputText = document.getElementById('textarea');
+    inputText.value="";
+    const event = new Event('input', { bubbles: true });
+    inputText.dispatchEvent(event);
+}
 function getResults(){
     const rephraseButton = document.getElementById('rephraseButton');
     const inputText = document.getElementById('textarea');

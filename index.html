@@ -42,6 +42,15 @@
       background-color: rgb(25, 29, 36);
       border: 1px solid rgb(25, 29, 36);
     }
+    .button-dark-lite{
+      background-color: rgba(38, 45, 56, 0.7);
+      border: none;
+      transition: all 0.5s;
+    }
+    .button-dark-lite:hover{
+      background-color: rgba(35, 41, 51, 0.7);
+      border: none;
+    }
 
     .button-dark{
      background-color: rgba(25, 29, 36, 0.7);
@@ -106,7 +115,7 @@
       <p id="charCount">Character Count : 0/5000</p>
       <p id="wordCount">Word Count : 0</p>
     </div>
-    <div class="my-3"><button class="button button-dark float-end px-5" type="submit" id="submitButton">Submit</button></div>
+    <div class="my-3"><button class="button button-dark-lite float-start px-5" type="button" id="clearText">Clear</button><button class="button button-dark float-end px-5" type="submit" id="submitButton">Submit</button></div>
     <div class="mt-5" id="outputTextarea"></div>
   </div>
 </div>
